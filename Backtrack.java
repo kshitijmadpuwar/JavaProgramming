@@ -25,7 +25,7 @@ public class Backtrack{
         return true;
 
     }
-    public static void Nqueen(char board[][],int row){
+     public static void Nqueen(char board[][],int row){
         //Base case
         if(row == board.length){
             coutways++;
@@ -40,7 +40,7 @@ public class Backtrack{
          }
         }
     }
-    public static void printboard(char board[][]){
+   public static void printboard(char board[][]){
         System.out.println("-----ChessBoard------");
         for(int i=0;i<board.length;i++){
         for(int j=0;j<board.length;j++){
@@ -51,6 +51,29 @@ public class Backtrack{
     }
 
 
+/* 
+    //Check if the problem can be solved & print only one solution to N Queen problem
+    public static boolean  Nqueen(char board[][],int row){
+        //Base case
+        if(row == board.length){
+            coutways++;
+            return true;
+        }
+        //work->place the Queeen
+        for(int j=0; j<board.length; j++){
+         if( isSafe(board, row, j) ){
+           board[row][j]='Q';
+           if(Nqueen(board, row+1)){
+            return true;
+           }
+           board[row][j]='x'; //BAcktracking
+         }
+        }
+        return false;
+    }
+ */
+
+// this variable track the total ways to palce the queen
     static int coutways=0;
     public static void main(String args[]){
         int n=4;
@@ -62,7 +85,12 @@ public class Backtrack{
             }
             System.out.println();
           }
-          Nqueen(board, 0);
+          if(Nqueen(board, 0)){
+            System.out.println("solution is possible");
+            printboard(board);
+          }else{
+            System.out.println("Solution is not possible");
+          }
 
           System.out.println("Calculate total ways to place's Queen_ " + coutways);
 
