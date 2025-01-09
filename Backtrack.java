@@ -28,7 +28,7 @@ public class Backtrack{
     public static void Nqueen(char board[][],int row){
         //Base case
         if(row == board.length){
-            printboard(board);
+            coutways++;
             return;
         }
         //work->place the Queeen
@@ -49,6 +49,9 @@ public class Backtrack{
         System.out.println();
       }
     }
+
+
+    static int coutways=0;
     public static void main(String args[]){
         int n=4;
         char board[][]=new char[n][n];
@@ -60,6 +63,8 @@ public class Backtrack{
             System.out.println();
           }
           Nqueen(board, 0);
+
+          System.out.println("Calculate total ways to place's Queen_ " + coutways);
 
     }
 }
