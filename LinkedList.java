@@ -131,6 +131,30 @@ public class LinkedList {
          return -1;
       }
     
+
+       /* Search for key in given arraylist if it found give position of key otherwise
+     return -1.(if key is not find)___Using Recursion
+      */
+      public int helper(Node head, int key){
+           if(head == null){
+            return -1;
+           }
+
+           if(head.data == key){
+            return 0;
+           }
+
+           int idx= helper(head.next, key);
+           if(idx == -1){
+            return -1;
+           }
+
+            return idx+1;
+      }
+
+      public int recSearch(int key){
+        return helper(head,key);
+      }
     public static void main(String args[]){
         LinkedList ll= new LinkedList();
         ll.printLL();
@@ -148,7 +172,8 @@ public class LinkedList {
         ll.removeLast();
         ll.printLL();
         System.out.println(size);//2->3->4->Null
-        System.out.println(ll.itrSearch(3));
+       // System.out.println(ll.itrSearch(3));
+        System.out.println(ll.recSearch(3));
 
 
         
