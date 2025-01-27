@@ -91,7 +91,10 @@ public class Backtrack{
         int w2=gridways(i, j+1, n, m);
         return w1+w2;
       }
-    // this code is used to solve sudoku
+  
+      
+    
+      // this code is used to solve sudoku
     public static boolean IsSafe(int sudoku[][],int row, int col, int digit){
       // To check coloum 
       for(int i=0;i<=8;i++){
@@ -185,30 +188,30 @@ public class Backtrack{
       //     }
       // */
       //  //   System.out.println("Calculate total ways to place's Queen_ " + coutways);
-      // int n1=3;
-      // int  m=3;
-      // System.out.println(gridways(0, 0, n1, m)) ;
+      int n1=3;
+      int  m=3;
+      System.out.println(gridways(0, 0, n1, m)) ;
 
       
-      //sudoku
-      int sudoku[][]={{0,0,8,0,0,0,0,0,0},
-      {4,9,0,1,5,7,0,0,2},
-      {0,0,3,0,0,4,1,9,0},
-      {1,8,5,0,6,0,0,2,0},
-      {0,0,0,0,2,0,0,6,0},
-      {9,6,0,4,0,0,3,0,0},
-      {0,3,0,0,7,2,0,0,4},
-      {0,4,9,0,3,0,0,5,7},
-      {8,2,7,0,0,9,0,1,3}
-    };
+  //     //sudoku
+  //     int sudoku[][]={{0,0,8,0,0,0,0,0,0},
+  //     {4,9,0,1,5,7,0,0,2},
+  //     {0,0,3,0,0,4,1,9,0},
+  //     {1,8,5,0,6,0,0,2,0},
+  //     {0,0,0,0,2,0,0,6,0},
+  //     {9,6,0,4,0,0,3,0,0},
+  //     {0,3,0,0,7,2,0,0,4},
+  //     {0,4,9,0,3,0,0,5,7},
+  //     {8,2,7,0,0,9,0,1,3}
+  //   };
 
     
-    if (sudokuSolver(sudoku, 0, 0)) {
-      System.out.println("Solution exists:");
-      printsudoku(sudoku);
-  } else {
-      System.out.println("No solution exists.");
-  }
+  //   if (sudokuSolver(sudoku, 0, 0)) {
+  //     System.out.println("Solution exists:");
+  //     printsudoku(sudoku);
+  // } else {
+  //     System.out.println("No solution exists.");
+  // }
   }
 }
   
